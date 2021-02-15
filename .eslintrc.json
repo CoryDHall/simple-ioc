@@ -1,11 +1,21 @@
 {
   "root": true,
-  "ignorePatterns": ["**/*"],
-  "plugins": ["@nrwl/nx"],
+  "ignorePatterns": [
+    "**/*"
+  ],
+  "plugins": [
+    "@nrwl/nx"
+  ],
   "overrides": [
     {
-      "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
+      "files": [
+        "*.ts",
+        "*.tsx",
+        "*.js",
+        "*.jsx"
+      ],
       "rules": {
+        "semi": "warn",
         "@nrwl/nx/enforce-module-boundaries": [
           "error",
           {
@@ -14,7 +24,9 @@
             "depConstraints": [
               {
                 "sourceTag": "*",
-                "onlyDependOnLibsWithTags": ["*"]
+                "onlyDependOnLibsWithTags": [
+                  "*"
+                ]
               }
             ]
           }
@@ -22,17 +34,220 @@
       }
     },
     {
-      "files": ["*.ts", "*.tsx"],
-      "extends": ["plugin:@nrwl/nx/typescript"],
+      "files": [
+        "*.ts",
+        "*.tsx"
+      ],
+      "extends": [
+        "plugin:@nrwl/nx/typescript",
+        "plugin:@typescript-eslint/recommended"
+      ],
       "parserOptions": {
         "project": "./tsconfig.*?.json"
       },
-      "rules": {}
+      "rules": {
+        "block-spacing": "warn",
+        "object-curly-newline": [
+          "warn",
+          {
+            "ObjectExpression": {
+              "minProperties": 1,
+              "multiline": true,
+              "consistent": false
+            },
+            "ObjectPattern": {
+              "minProperties": 2,
+              "multiline": true,
+              "consistent": false
+            }
+          }
+        ],
+        "object-property-newline": [
+          "warn",
+          {
+            "allowAllPropertiesOnSameLine": true
+          }
+        ],
+        "function-call-argument-newline": [
+          "warn",
+          "consistent"
+        ],
+        "space-infix-ops": [
+          "error",
+          {
+            "int32Hint": true
+          }
+        ],
+        "space-in-parens": "warn",
+        "space-unary-ops": "error",
+        "rest-spread-spacing": "warn",
+        "comma-spacing": "warn",
+        "comma-dangle": [
+          "warn",
+          "always-multiline"
+        ],
+        "template-curly-spacing": "error",
+        "object-curly-spacing": [
+          "warn",
+          "always"
+        ],
+        "indent": "off",
+        "@typescript-eslint/indent": [
+          "warn",
+          2
+        ],
+        "prefer-const": "warn",
+        "prefer-template": "warn",
+        "prefer-rest-params": "warn",
+        "prefer-destructuring": [
+          "error",
+          {
+            "array": true,
+            "object": true
+          },
+          {
+            "enforceForRenamedProperties": true
+          }
+        ],
+        "newline-per-chained-call": [
+          "warn",
+          {
+            "ignoreChainWithDepth": 1
+          }
+        ],
+        "brace-style": "off",
+        "@typescript-eslint/brace-style": [
+          "error",
+          "1tbs",
+          {
+            "allowSingleLine": true
+          }
+        ],
+        "arrow-parens": [
+          "warn",
+          "as-needed"
+        ],
+        "@typescript-eslint/promise-function-async": "warn",
+        "@typescript-eslint/member-delimiter-style": "warn",
+        "@typescript-eslint/explicit-module-boundary-types": "off",
+        "semi": "error",
+        "func-call-spacing": "off",
+        "@typescript-eslint/func-call-spacing": [
+          "error"
+        ],
+        "no-loss-of-precision": "off",
+        "@typescript-eslint/no-loss-of-precision": [
+          "error"
+        ],
+        "one-var": [
+          "warn",
+          {
+            "initialized": "never",
+            "uninitialized": "consecutive"
+          }
+        ],
+        "no-multi-spaces": "warn",
+        "key-spacing": "warn",
+        "max-len": [
+          "warn",
+          {
+            "code": 100
+          }
+        ],
+        "max-lines-per-function": [
+          "warn",
+          {
+            "max": 30,
+            "skipBlankLines": true,
+            "skipComments": true
+          }
+        ],
+        "no-multiple-empty-lines": [
+          "warn",
+          {
+            "max": 2
+          }
+        ],
+        "one-var-declaration-per-line": [
+          "warn",
+          "initializations"
+        ],
+        "quotes": [
+          "warn",
+          "single"
+        ],
+        "padding-line-between-statements": [
+          "warn",
+          {
+            "blankLine": "always",
+            "prev": "*",
+            "next": "export"
+          },
+          {
+            "blankLine": "any",
+            "prev": "export",
+            "next": "export"
+          },
+          {
+            "blankLine": "always",
+            "prev": "import",
+            "next": "*"
+          },
+          {
+            "blankLine": "any",
+            "prev": "import",
+            "next": "import"
+          },
+          {
+            "blankLine": "always",
+            "prev": "*",
+            "next": "return"
+          },
+          {
+            "blankLine": "always",
+            "prev": [
+              "const",
+              "let",
+              "var"
+            ],
+            "next": "*"
+          },
+          {
+            "blankLine": "any",
+            "prev": [
+              "const",
+              "let",
+              "var"
+            ],
+            "next": [
+              "const",
+              "let",
+              "var"
+            ]
+          },
+          {
+            "blankLine": "always",
+            "prev": [
+              "multiline-block-like",
+              "block-like"
+            ],
+            "next": [
+              "const",
+              "let",
+              "var"
+            ]
+          }
+        ]
+      }
     },
     {
-      "files": ["*.js", "*.jsx"],
-      "extends": ["plugin:@nrwl/nx/javascript"],
-      "rules": {}
+      "files": [
+        "*.js",
+        "*.jsx"
+      ],
+      "extends": [
+        "plugin:@nrwl/nx/javascript"
+      ]
     }
   ]
 }
