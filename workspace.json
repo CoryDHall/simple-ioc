@@ -1,10 +1,33 @@
 {
-  
-  
   "version": 2,
-  
-  "projects": {},
+  "projects": {
+    "ioc": {
+      "root": "packages/ioc",
+      "sourceRoot": "packages/ioc/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "packages/ioc/**/*.ts"
+            ]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/packages/ioc"
+          ],
+          "options": {
+            "jestConfig": "packages/ioc/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    }
+  },
   "cli": {
-    "defaultCollection": "@nrwl/workspace"
+    "defaultCollection": "@nrwl/node"
   }
 }
