@@ -23,6 +23,21 @@
             "jestConfig": "packages/ioc/jest.config.js",
             "passWithNoTests": true
           }
+        },
+        "build": {
+          "executor": "@nrwl/node:package",
+          "outputs": [
+            "{options.outputPath}"
+          ],
+          "options": {
+            "outputPath": "dist/packages/ioc",
+            "tsConfig": "packages/ioc/tsconfig.lib.json",
+            "packageJson": "packages/ioc/package.json",
+            "main": "packages/ioc/src/index.ts",
+            "assets": [
+              "packages/ioc/*.md"
+            ]
+          }
         }
       }
     }
