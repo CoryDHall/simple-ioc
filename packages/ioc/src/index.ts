@@ -1,1 +1,1 @@
-export * from './lib/ioc';
+export * as ioc from './lib/ioc';

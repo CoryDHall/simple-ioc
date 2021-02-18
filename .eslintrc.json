@@ -127,6 +127,7 @@
           "warn",
           "as-needed"
         ],
+        "@typescript-eslint/no-namespace": "off",
         "@typescript-eslint/promise-function-async": "warn",
         "@typescript-eslint/member-delimiter-style": "warn",
         "@typescript-eslint/explicit-module-boundary-types": "off",
